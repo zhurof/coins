@@ -1,0 +1,421 @@
+﻿@media(min-width: 992px)
+	.number-field
+		&__btn
+			transition: all .3s ease
+			&:hover
+				background-color: $green
+	.modal
+		&__list
+			li
+				cursor: pointer
+				transition: all .2s ease
+				&:hover
+					color: $green
+					text-decoration: underline
+	.header
+		&__menu
+			>li>a
+				transition: all .3s ease
+				&:hover
+					background-color: $green
+					color: #fff
+		&__location-link
+			&:before
+				transition: all .3s ease
+			&:hover:before
+				color: $green
+	.account
+		&__menu
+			>li>a:hover
+				border-color: $green
+		
+@media(max-width:1199px)
+	.slider
+		&__item
+			min-height: 305px
+	.good
+		&__info
+			margin: 30px 0 0
+	.dynamic-table,
+	.quotes-table
+		td,th
+			&:first-child
+				padding-left: 1em
+			&:last-child
+				padding-right: 1em
+	.account
+		&__head
+			padding-left: 0
+		&__section
+			padding-left: 0
+			padding-right: calc(100% - 570px)
+  
+@media(max-width:991px)
+	.align
+		&-left,&-right
+			display: block
+			float: none
+			margin: 1em auto
+			max-width: 100%
+	.menu-btn,
+	.search-btn
+		display: inline-block
+		font-size: 25px
+		line-height: 1.5
+		width: 1.5em
+		color: $green		
+	.menu-btn
+		font-family: icomoon
+		&:before
+			content: '\e90f'
+		&.active
+			&:before
+				content: '\e90d'
+	.search-btn
+		font-family: fontAwesome
+		&:before
+			content: ''
+	.header
+		text-align: center
+		padding: 16px 0
+		position: relative
+		z-index: 3
+		&__topline
+			padding: 0
+		&__logo
+			margin: 0 auto 15px
+		&__tools
+			display: flex
+			align-items: center
+			justify-content: space-between
+		&__search
+			position: absolute
+			top: 100%
+			left: 60px
+			width: calc(100% - 60px - 15px)
+			z-index: 2
+			visibility: hidden
+			&.open
+				visibility: visible
+		&__bottomline
+			display: none
+			position: absolute
+			top: 100%
+			left: 0
+			width: 100%
+			background-color: #fff
+			padding: 15px 0
+			&.open
+				display: block
+		&__menu
+			display: block
+			>li
+				display: block
+	.slider
+		&__item
+			display: block
+			min-height: 0
+			padding: 120px 0
+			text-shadow: 0 0 5px rgba(0,0,0,.15)
+			&.slick-slide
+				display: block
+		&__caption
+			text-shadow: 0 0 10px black
+	.category-block
+		&__title
+			text-align: center
+	.card
+		min-height: calc(100% - 30px)
+		margin-bottom: 30px
+	.catalog
+		&__body
+			>.row
+				display: flex
+				flex-direction: column
+		&__main
+			order: 1
+			>.row
+				display: flex
+				flex-wrap: wrap
+	.sort
+		margin: 0 0 5px
+	.filter
+		&__mobile-toggler
+			display: block
+			overflow: hidden
+			clear: both
+			padding: 15px 0
+			&:after
+				content: '\e905'
+				display: inline-block
+				color: $green
+				font-family: icomoon
+				float: right
+				transition: all .3s ease
+			&.active:after
+				transform: scaleY(-1)
+			span
+				font-weight: bold
+				text-decoration: underline
+		&__body
+			display: none
+			margin: 0 0 30px
+			&.open
+				display: block
+		&__hide-btn
+			display: block
+			color: $green
+			padding: 10px
+			text-align: center
+			border: 1px dashed #ccc
+	.good
+		&__slider
+			margin: 0 0 30px
+		&__chars
+			width: 100%
+	.proposition
+		&__address
+			padding: 20px 0
+		&__btn
+			display: block
+			width: max-content
+			max-width: 100%
+			margin-left: auto
+	.account
+		position: relative
+		display: block
+		&__sidebar
+			position: absolute
+			left: 0
+			top: 0
+			width: 100%
+			z-index: 2
+			background-color: #fff
+			border-bottom: 1px solid #ccc
+			display: none
+			&.open
+				display: block
+		&__main
+			width: auto
+		&__container
+			padding: 0 15px
+			max-width: 750px
+			margin: 0 auto
+		&__head
+			display: block
+			padding: 30px 0
+		&__links
+			margin: 1em 0 0
+			a
+				margin: 0 1em 0 0
+	.stat
+		&__field
+			margin: 0 20px 20px 0
+		&__table
+			table-layout: auto
+	.footer
+		.row
+			display: flex
+			flex-wrap: wrap
+		&__social
+			margin: 0 0 25px
+
+@media(max-width:767px)
+	select
+		display: block
+		width: 100%
+	.file-field
+		margin: 10px 0 0
+	.phone-field
+		&__additional
+			margin-left: 15px
+	.help
+		display: none
+	h1,h2
+		font-size: 20px
+	.row
+		margin-left: -7.5px
+		margin-right: -7.5px
+	[class*="col-"]
+		padding-left: 7.5px
+		padding-right: 7.5px
+	.modal-wrapper
+		padding: 15px
+	.modal
+		padding: 40px 20px
+	.category-block
+		&__slider
+			.slick-list
+				margin: 0 -7.5px
+		&__item
+			margin-left: 7.5px
+			margin-right: 7.5px
+	.account
+		&__section
+			padding-right: 0
+		&__section-title
+			font-size: 20px
+		&__field
+			display: block
+			margin: 0 0 15px
+		&__key,
+		&__value
+			width: 100%
+		&__key
+			margin: 0 0 7px
+	.stat
+		padding: 20px 0 40px
+		&__head
+			display: block
+		&__field
+			margin: 0 0 15px
+		&__btn
+			margin: 15px 0 0
+			
+
+@media(max-width:479px)
+	body
+		font-size: 12px
+	main
+		padding-bottom: 0
+	table
+		font-size: 12px
+	.file-field
+		display: block
+		max-width: 100%
+		&__content
+			display: block
+			margin: 0 0 15px
+			&:last-child
+				margin: 15px 0 0
+			img
+				margin: 0 auto 5px				
+	.phone-link
+		font-size: inherit
+	.modal-wrapper
+		padding: 15px 0
+	.modal
+		font-size: 14px
+		&__title
+			font-size: 18px
+	.header
+		&__logo
+			width: 190px
+		&__search
+			width: calc(100% - 60px - 7.5px)
+	.slider
+		margin: 0
+		&__caption
+			font-size: 20px
+		&__item
+			padding: 60px 0
+	.card
+		font-size: 11px
+		padding: 5px 10px 15px
+		margin-bottom: 20px
+		min-height: calc(100% - 20px)
+		&__img
+			height: 77px
+			margin-bottom: 15px
+		&__title
+			margin: 0 0 .5em
+		&__price
+			font-size: 12px
+	.category-block
+		padding: 15px 0
+	.breadcrumbs
+		display: none
+	.sort
+		font-size: 11px
+	.pagination
+		margin: 20px 0 30px
+		>li
+			margin: 0
+	.address-block
+		font-size: inherit
+	.good
+		&__chars
+			td
+				padding: 4px 8px
+		&__info
+			padding: 15px
+		&__subtitle
+			font-size: 14px
+		&__price-wrapper
+			margin: 0 0 15px
+		&__price-item
+			font-size: 11px
+		&__price
+			font-size: 19px
+	.proposition
+		margin: 0 -15px
+		padding: 15px
+		&__title
+			font-size: 14px
+		&__address
+			padding: 15px 0
+		&__price-item
+			margin: 5px 0
+			font-size: 12px
+	.page
+		padding: 0 0 50px
+	.auth
+		padding: 20px 0 50px
+		&__item
+			display: block
+			margin: 0 0 15px
+		&__input
+			width: 100%
+		&__label
+			display: block
+			width: auto
+			padding: 0
+			margin: 0 0 5px
+		&__inner
+			max-width: 100%
+		&__btn
+			&:first-child
+				margin-top: 15px
+			&:not(:last-child)
+				margin-bottom: 15px
+	.dynamic-table,
+	.quotes-table,
+	.chart
+		margin: 0 0 30px
+	.quotes-table
+		table-layout: fixed
+		td,th
+			&:last-child
+				width: auto
+	.nav-table
+		&__item
+			padding: 15px
+			display: block
+		&__item-title
+			width: auto
+			text-align: center
+			padding: 0
+			margin: 0 0 1em
+		&__tools
+			margin: 0 auto
+	.account
+		&__head
+			padding: 15px 0
+		&__section-title
+			font-size: 16px
+		&__notation
+			font-size: 12px
+	.footer
+		font-size: 11px
+		padding: 1em 0
+		&:before
+			margin: 0 0 2em
+		&__social
+			font-size: 14px
+			margin: 0 0 1em
+		&__app
+			margin: 0 -2.5px
+			&-link
+				margin: 0 2.5px
+		
+	
