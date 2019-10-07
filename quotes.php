@@ -53,67 +53,153 @@
 					</div>
 				</div>
 				<p>Доходность золота по срокам в разных валютах</p>
-				<div class="table-wrapper">
-					<table class="dynamic-table">
-						<thead>
-							<tr>
-								<th></th>
-								<th colspan="7">Общая доходность золота за весь период, %</th>
-							</tr>
-							<tr>
-								<th>Валюта</th>
-								<th>1 месяц</th>
-								<th>2 месяца</th>
-								<th>6 месяцев</th>
-								<th>1 год</th>
-								<th>2 года</th>
-								<th>5 лет</th>
-								<th>10 лет</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>доллар [USD]</td>
-								<td class="increase">6.1931%</td>
-								<td class="increase">6.1931%</td>
-								<td class="increase">6.1931%</td>
-								<td class="increase">6.1931%</td>
-								<td class="increase">6.1931%</td>
-								<td class="increase">6.1931%</td>
-								<td class="increase">6.1931%</td>
-							</tr>
-							<tr>
-								<td>евро [EUR]</td>
-								<td class="increase">7.2505%</td>
-								<td class="increase">7.2505%</td>
-								<td class="increase">7.2505%</td>
-								<td class="increase">7.2505%</td>
-								<td class="increase">7.2505%</td>
-								<td class="increase">7.2505%</td>
-								<td class="increase">7.2505%</td>
-							</tr>
-							<tr>
-								<td>фунт стерлингов [GBP]</td>
-								<td class="increase">8.4766%</td>
-								<td class="increase">8.4766%</td>
-								<td class="increase">8.4766%</td>
-								<td class="increase">8.4766%</td>
-								<td class="increase">8.4766%</td>
-								<td class="increase">8.4766%</td>
-								<td class="increase">8.4766%</td>
-							</tr>
-							<tr>
-								<td>швейцарский франк [CHF]</td>
-								<td class="increase">5.6364%</td>
-								<td class="increase">5.6364%</td>
-								<td class="increase">5.6364%</td>
-								<td class="increase">5.6364%</td>
-								<td class="increase">5.6364%</td>
-								<td class="increase">5.6364%</td>
-								<td class="decrease">1.6013%</td>
-							</tr>
-						</tbody>
-					</table>
+				<div class="table-wrapper dynamic-table">
+					<div class="dynamic-table__head">
+						<table>
+							<thead>
+								<tr>
+									<th></th>
+									<th colspan="7">Общая доходность золота за весь период, %</th>
+								</tr>
+								<tr>
+									<th>Валюта</th>
+									<th>1 месяц</th>
+									<th>2 месяца</th>
+									<th>6 месяцев</th>
+									<th>1 год</th>
+									<th>2 года</th>
+									<th>5 лет</th>
+									<th>10 лет</th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+					<div class="dynamic-table__body custom-scrollbar">
+						<table>
+							<tbody>
+								<tr>
+									<td>доллар [USD]</td>
+									<td class="increase">6.1931%</td>
+									<td class="increase">6.1931%</td>
+									<td class="increase">6.1931%</td>
+									<td class="increase">6.1931%</td>
+									<td class="increase">6.1931%</td>
+									<td class="increase">6.1931%</td>
+									<td class="increase">6.1931%</td>
+								</tr>
+								<tr>
+									<td>евро [EUR]</td>
+									<td class="increase">7.2505%</td>
+									<td class="increase">7.2505%</td>
+									<td class="increase">7.2505%</td>
+									<td class="increase">7.2505%</td>
+									<td class="increase">7.2505%</td>
+									<td class="increase">7.2505%</td>
+									<td class="increase">7.2505%</td>
+								</tr>
+								<tr>
+									<td>фунт стерлингов [GBP]</td>
+									<td class="increase">8.4766%</td>
+									<td class="increase">8.4766%</td>
+									<td class="increase">8.4766%</td>
+									<td class="increase">8.4766%</td>
+									<td class="increase">8.4766%</td>
+									<td class="increase">8.4766%</td>
+									<td class="increase">8.4766%</td>
+								</tr>
+								<tr>
+									<td>швейцарский франк [CHF]</td>
+									<td class="increase">5.6364%</td>
+									<td class="increase">5.6364%</td>
+									<td class="increase">5.6364%</td>
+									<td class="increase">5.6364%</td>
+									<td class="increase">5.6364%</td>
+									<td class="increase">5.6364%</td>
+									<td class="decrease">1.6013%</td>
+								</tr>
+								<tr>
+									<td>доллар [USD]</td>
+									<td class="increase">6.1931%</td>
+									<td class="increase">6.1931%</td>
+									<td class="increase">6.1931%</td>
+									<td class="increase">6.1931%</td>
+									<td class="increase">6.1931%</td>
+									<td class="increase">6.1931%</td>
+									<td class="increase">6.1931%</td>
+								</tr>
+								<tr>
+									<td>евро [EUR]</td>
+									<td class="increase">7.2505%</td>
+									<td class="increase">7.2505%</td>
+									<td class="increase">7.2505%</td>
+									<td class="increase">7.2505%</td>
+									<td class="increase">7.2505%</td>
+									<td class="increase">7.2505%</td>
+									<td class="increase">7.2505%</td>
+								</tr>
+								<tr>
+									<td>фунт стерлингов [GBP]</td>
+									<td class="increase">8.4766%</td>
+									<td class="increase">8.4766%</td>
+									<td class="increase">8.4766%</td>
+									<td class="increase">8.4766%</td>
+									<td class="increase">8.4766%</td>
+									<td class="increase">8.4766%</td>
+									<td class="increase">8.4766%</td>
+								</tr>
+								<tr>
+									<td>швейцарский франк [CHF]</td>
+									<td class="increase">5.6364%</td>
+									<td class="increase">5.6364%</td>
+									<td class="increase">5.6364%</td>
+									<td class="increase">5.6364%</td>
+									<td class="increase">5.6364%</td>
+									<td class="increase">5.6364%</td>
+									<td class="decrease">1.6013%</td>
+								</tr>
+								<tr>
+									<td>доллар [USD]</td>
+									<td class="increase">6.1931%</td>
+									<td class="increase">6.1931%</td>
+									<td class="increase">6.1931%</td>
+									<td class="increase">6.1931%</td>
+									<td class="increase">6.1931%</td>
+									<td class="increase">6.1931%</td>
+									<td class="increase">6.1931%</td>
+								</tr>
+								<tr>
+									<td>евро [EUR]</td>
+									<td class="increase">7.2505%</td>
+									<td class="increase">7.2505%</td>
+									<td class="increase">7.2505%</td>
+									<td class="increase">7.2505%</td>
+									<td class="increase">7.2505%</td>
+									<td class="increase">7.2505%</td>
+									<td class="increase">7.2505%</td>
+								</tr>
+								<tr>
+									<td>фунт стерлингов [GBP]</td>
+									<td class="increase">8.4766%</td>
+									<td class="increase">8.4766%</td>
+									<td class="increase">8.4766%</td>
+									<td class="increase">8.4766%</td>
+									<td class="increase">8.4766%</td>
+									<td class="increase">8.4766%</td>
+									<td class="increase">8.4766%</td>
+								</tr>
+								<tr>
+									<td>швейцарский франк [CHF]</td>
+									<td class="increase">5.6364%</td>
+									<td class="increase">5.6364%</td>
+									<td class="increase">5.6364%</td>
+									<td class="increase">5.6364%</td>
+									<td class="increase">5.6364%</td>
+									<td class="increase">5.6364%</td>
+									<td class="decrease">1.6013%</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
 				</div>
 			</div>
 		</div>

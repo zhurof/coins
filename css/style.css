@@ -134,6 +134,11 @@ textarea:focus {
   content: "";
 }
 
+input[type=checkbox]:focus,
+input[type=radio]:focus {
+  outline: none;
+}
+
 select {
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -408,6 +413,50 @@ label {
   background-size: 18px auto;
 }
 
+.select {
+  display: inline-block;
+  position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.select__input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  pointer-events: none;
+}
+.select__output {
+  display: block;
+  padding: 6px 30px 6px 20px;
+  background: url(../img/icons/select-arrows.svg) no-repeat right 20px center/7px auto, #e3e3e3;
+  border: none;
+  border-radius: 2px;
+  color: #292929;
+}
+.select__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: none;
+  position: absolute;
+  z-index: 2;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  line-height: 1;
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.12);
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.12);
+}
+.select__list > li {
+  padding: 6px 30px 6px 20px;
+}
+.select--open .select__list {
+  display: block;
+}
+
 .radio-group {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -473,8 +522,14 @@ button,
           box-shadow: none;
   color: #fff;
 }
+.btn:active {
+  background-color: #027e10;
+}
 .btn:focus, .btn:hover {
   color: #fff;
+}
+.btn:focus, .btn:active, .btn:active:focus {
+  outline: none;
 }
 .btn:disabled {
   background-color: #ccc;
@@ -485,6 +540,9 @@ button,
 }
 .btn--gray:focus, .btn--gray:hover {
   color: #2e2e2e;
+}
+.btn--gray:active {
+  background-color: #e5e5e5;
 }
 .btn--big {
   font-size: 16px;
@@ -745,7 +803,7 @@ tbody tr:nth-child(even) td, tbody tr:nth-child(even) th {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  color: #ccc;
+  color: #666;
   letter-spacing: -0.02em;
   padding-left: 14px;
   margin: 0 0 20px;
@@ -782,13 +840,6 @@ tbody tr:nth-child(even) td, tbody tr:nth-child(even) th {
   position: absolute;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-}
-
-.custom-scrollbar::-webkit-scrollbar {
-  width: 7px;
-}
-.custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: #1a9f29;
 }
 
 /*выравнивание */
@@ -861,6 +912,9 @@ tbody tr:nth-child(even) td, tbody tr:nth-child(even) th {
 .header__topline {
   padding: 30px 0 23px;
 }
+.header__search {
+  margin: 9px 0 0;
+}
 .header__tools {
   text-align: center;
 }
@@ -870,6 +924,7 @@ tbody tr:nth-child(even) td, tbody tr:nth-child(even) th {
   font-size: 18px;
   line-height: 2;
   letter-spacing: -0.04em;
+  margin: 9px 0 0;
 }
 .header__location-link:before {
   content: "";
@@ -912,6 +967,7 @@ tbody tr:nth-child(even) td, tbody tr:nth-child(even) th {
 .header__menu > li.active > a {
   background-color: #1a9f29;
   color: #fff;
+  font-weight: bold;
 }
 
 /*ОСНОВНОЕ СОДЕРЖИМОЕ */
@@ -1141,8 +1197,15 @@ tbody tr:nth-child(even) td, tbody tr:nth-child(even) th {
   display: inline-block;
   margin: 0 7px 0 2px;
 }
+.sort__item:hover, .sort__item:focus {
+  color: #1a9f29;
+  text-decoration: none;
+}
 .sort__item:last-of-type {
   margin-right: 20px;
+}
+.sort__item.active {
+  text-shadow: 0 0 0.75px #1a9f29;
 }
 
 .pagination {
@@ -1803,13 +1866,18 @@ tbody tr:nth-child(even) td, tbody tr:nth-child(even) th {
   margin: 0 0 50px;
   white-space: nowrap;
 }
+.dynamic-table td, .dynamic-table th {
+  width: 102px;
+}
 .dynamic-table td:first-child, .dynamic-table th:first-child {
   padding-left: 100px;
   text-align: left;
   white-space: normal;
+  width: 320px;
 }
 .dynamic-table td:last-child, .dynamic-table th:last-child {
   padding-right: 100px;
+  width: 200px;
 }
 .dynamic-table .increase {
   color: #1a9f29;
@@ -1822,6 +1890,11 @@ tbody tr:nth-child(even) td, tbody tr:nth-child(even) th {
 }
 .dynamic-table .decrease:before {
   content: "▼ ";
+}
+.dynamic-table__body {
+  max-height: 420px;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .quotes-table {
@@ -1883,6 +1956,12 @@ tbody tr:nth-child(even) td, tbody tr:nth-child(even) th {
   display: inline-block;
   color: inherit;
   text-decoration: none;
+  width: 1em;
+}
+.footer__social a img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 .footer__title {
   font: inherit;
@@ -1916,12 +1995,42 @@ tbody tr:nth-child(even) td, tbody tr:nth-child(even) th {
 
 /*АДАПТИВ */
 @media(min-width: 992px) {
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 7px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #1a9f29;
+  }
+
+  .btn {
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  .btn:hover {
+    background-color: #027e10;
+  }
+  .btn--gray:hover {
+    background-color: #e5e5e5;
+  }
+  .btn[disabled]:hover {
+    background-color: #ccc;
+  }
+
   .number-field__btn {
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
   }
   .number-field__btn:hover {
     background-color: #1a9f29;
+  }
+
+  .select__list > li {
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  .select__list > li:hover {
+    background-color: #1a9f29;
+    color: #fff;
   }
 
   .modal__list li {
@@ -1953,6 +2062,15 @@ tbody tr:nth-child(even) td, tbody tr:nth-child(even) th {
   .account__menu > li > a:hover {
     border-color: #1a9f29;
   }
+
+  .sort__item {
+    -webkit-transition: all 0.15s ease;
+    transition: all 0.15s ease;
+  }
+  .sort__item:hover {
+    /*использую тень вместо смены начертания, чтобы не было изменения размеров элемента */
+    text-shadow: 0 0 0.75px #1a9f29;
+  }
 }
 @media(max-width:1199px) {
   .slider__item {
@@ -1974,6 +2092,18 @@ tbody tr:nth-child(even) td, tbody tr:nth-child(even) th {
     padding-right: 1em;
   }
 
+  .dynamic-table td, .dynamic-table th {
+    width: 100px;
+    min-width: 100px;
+  }
+  .dynamic-table td:first-child, .dynamic-table th:first-child {
+    width: 220px;
+    min-width: 220px;
+  }
+  .dynamic-table td:last-child, .dynamic-table th:last-child {
+    width: 100px;
+  }
+
   .account__head {
     padding-left: 0;
   }
@@ -1983,6 +2113,18 @@ tbody tr:nth-child(even) td, tbody tr:nth-child(even) th {
   }
 }
 @media(max-width:991px) {
+  .select__input {
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: all;
+  }
+  .select__output {
+    z-index: 0;
+  }
+
   .align-left, .align-right {
     display: block;
     float: none;
@@ -2028,6 +2170,9 @@ tbody tr:nth-child(even) td, tbody tr:nth-child(even) th {
   .header__logo {
     margin: 0 auto 15px;
   }
+  .header__location-link {
+    margin: 0;
+  }
   .header__tools {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2040,6 +2185,7 @@ tbody tr:nth-child(even) td, tbody tr:nth-child(even) th {
             justify-content: space-between;
   }
   .header__search {
+    margin: 0;
     position: absolute;
     top: 100%;
     left: 60px;
@@ -2064,6 +2210,7 @@ tbody tr:nth-child(even) td, tbody tr:nth-child(even) th {
   }
   .header__menu {
     display: block;
+    margin: 0 -15px;
   }
   .header__menu > li {
     display: block;
@@ -2229,7 +2376,7 @@ tbody tr:nth-child(even) td, tbody tr:nth-child(even) th {
   }
 }
 @media(max-width:767px) {
-  select {
+  select, .select {
     display: block;
     width: 100%;
   }
@@ -2481,6 +2628,21 @@ tbody tr:nth-child(even) td, tbody tr:nth-child(even) th {
   }
   .quotes-table td:last-child, .quotes-table th:last-child {
     width: auto;
+  }
+
+  .dynamic-table td, .dynamic-table th {
+    width: 90px;
+    min-width: 90px;
+  }
+  .dynamic-table td:first-child, .dynamic-table th:first-child {
+    width: 150px;
+    min-width: 150px;
+  }
+  .dynamic-table td:last-child, .dynamic-table th:last-child {
+    width: 90px;
+  }
+  .dynamic-table__body {
+    max-height: 290px;
   }
 
   .nav-table__item {

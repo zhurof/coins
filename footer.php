@@ -8,9 +8,9 @@
 						<li><a href="connect.php">Подключиться к платформе</a></li>
 					</ul>
 					<div class="footer__social">
-						<a href="//facebook.com" class="fa-facebook-square" target="_blank"></a>
-						<a href="//vk.com" class="fa-vk" target="_blank"></a>
-						<a href="//instagram.com" class="fa-instagram" target="_blank"></a>
+						<a href="//facebook.com" target="_blank"><img src="img/icons/facebook.svg" alt=""></a>
+						<a href="//vk.com" target="_blank"><img src="img/icons/vk.svg" alt=""></a>
+						<a href="//instagram.com" target="_blank"><img src="img/icons/instagram.svg" alt=""></a>
 					</div>
 				</div>
 				<div class="col-md-3 col-xs-6">

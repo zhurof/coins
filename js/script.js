@@ -129,6 +129,11 @@ $('.filter__hide-btn').click(function(){
 	$('.filter__mobile-toggler').removeClass('active');
 	$('.filter__body').removeClass('open');
 })
+//переключение активности ссылок сортировки ДЛЯ ДЕМОНСТРАЦИИ! Реализовать на серверной части
+$('.sort__item').click(function(e){
+	e.preventDefault();
+	$(this).addClass('active').siblings().removeClass('active');
+})
 //Переключение видимости соседнего блока (знаю, что в BS3 такое есть, но там херь на id-шниках)
 $('.toggle-link').click(function(){
 	$(this).toggleClass('active');
@@ -207,6 +212,24 @@ $('.file-field__btn [type=file]').change(function(){
 		}			
 	}
 })
+//кастомный select
+$('.select').blur(function(){
+	$(this).removeClass('select--open');
+})
+$('.select__output').click(function(){
+	$(this).parent('.select').toggleClass('select--open');
+})
+$('.select__list>li').click(function(){
+	var value = $(this).text(),
+			select = $(this).parents('.select');
+			
+	select.removeClass('select--open');
+	select.find('.select__input').val(value).trigger('change');
+})
+$('.select__input').change(function(){
+	var wrapper = $(this).parent('.select');	
+	wrapper.find('.select__output').text(this.value);	
+})
 //Диапазон дат
 var rangeOptions = {
 	alwaysShowCalendars: false,
@@ -226,4 +249,21 @@ var rangeOptions = {
 	}
 };
 $('.date-field').daterangepicker(rangeOptions);
+//Корректировка таблицы с прокручиваемой частью
+function correctScroll(){
+	$('.dynamic-table__body').each(function(){
+		var scrollbarWidth = this.offsetWidth - this.clientWidth,
+				parentWidth = $(this).siblings('.dynamic-table__head').children('table').width();
+		if(scrollbarWidth){
+			$(this).children('table').css('width','calc(100% + '+scrollbarWidth+'px)');
+		}
+		if(parentWidth){
+			$(this).width(parentWidth);
+		}
+	})
+}
+$(window).resize(correctScroll);
+$(document).ready(correctScroll);
+
+
 

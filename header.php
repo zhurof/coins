@@ -42,12 +42,23 @@
 			<div class="container">
 				<ul class="header__menu">
 					<li><a href="category.php">Весь каталог</a></li>
-					<li><a href="category.php">Инвестиционные</a></li>
-					<li><a href="category.php">Старинные</a></li>
-					<li><a href="category.php">Коллекционые</a></li>
+					<li><a href="category.php?1">Инвестиционные</a></li>
+					<li><a href="category.php?2">Старинные</a></li>
+					<li><a href="category.php?3">Коллекционые</a></li>
 					<li><a href="quotes.php">Котировки</a></li>
 				</ul>
 			</div>
 		</div>
+		<script>
+			//Подсветка активного пункта меню. Для демонстрации! 
+			//GET-параметр для демонстративного ра
+			var links = document.querySelectorAll('.header__menu a');
+			for(var i=0;i<links.length;i++){
+				if(links[i].href == location.href){
+					links[i].parentElement.classList.add('active');
+					break;
+				}
+			}
+		</script>
 		<?endif;?>
 	</header>

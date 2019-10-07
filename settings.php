@@ -53,16 +53,25 @@
 					</form>
 					<form action="" class="account__section" id="legal-data">
 						<h2 class="account__section-title">Юридические данные</h2>
-						<label class="account__field">
-							<span class="account__key">Тип организации</span>
-							<span class="account__value">
-								<select>
-									<option>ООО</option>
-									<option>ОАО</option>
-									<option>ЗАО</option>
-								</select>
-							</span>
-						</label>
+						<div class="account__field">
+							<div class="account__key">Тип организации</div>
+							<div class="account__value">
+								<!-- Важно! Сохранить значения tabindex, это используется в скрипте и просто удобно-->
+								<div class="select" tabindex="0">
+									<select class="select__input" tabindex="-1">
+										<option>ООО</option>
+										<option>ОАО</option>
+										<option>ЗАО</option>
+									</select>
+									<div class="select__output">ООО</div>
+									<ul class="select__list">
+										<li>ООО</li>
+										<li>ОАО</li>
+										<li>ЗАО</li>
+									</ul>
+								</div>
+							</div>
+						</div>
 						<label class="account__field">
 							<span class="account__key">ОГРН</span>
 							<span class="account__value">
